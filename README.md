@@ -1,0 +1,2 @@
+# Leet
+own algorithm
