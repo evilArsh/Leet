@@ -10,12 +10,16 @@
  * @return {ListNode}
  */
 var reverseList = function(head) {
-    if(head===null||head.next===null){
-        return head
-    }
-    const res=reverseList(head.next)
-    head.next.next=head
-    head.next=null
+    // if(head===null||head.next===null){
+    //     return head
+    // }
+    // ***************
+    // const res=reverseList(head.next)
+    // head.next.next=head
+    // head.next=null
+    // ***************
+
+    // ***************
     // let res=reverseList(head.next)
     // let tmp=res
     // while(tmp){
@@ -26,5 +30,17 @@ var reverseList = function(head) {
     //     }
     //     tmp=tmp.next
     // }
-    return res
+    // ***************
+
+    // ***************
+    let prev=null
+    let cul=head
+    while(cul){
+        let nextTmp=cul.next
+        cul.next=prev
+        prev=cul
+        cul=nextTmp
+    }
+    // ***************
+    return prev
 };
